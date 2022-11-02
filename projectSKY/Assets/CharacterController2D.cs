@@ -5,13 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterController2D : MonoBehaviour
 {
-    Rigidbody2D rigidbody2D;
+    Rigidbody2D rigidbody2d;
     [SerializeField] float speed = 2f;
     Vector2 motionVector;
 
     void Awake()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -22,14 +22,13 @@ public class CharacterController2D : MonoBehaviour
             );
     }
 
-    void fixedUpdate()
+    void FixedUpdate()
     {
         Move();
-
     }
 
     private void Move()
     {
-        rigidbody2D.velocity = motionVector * speed;
+        rigidbody2d.velocity = motionVector * speed;
     }
 }
